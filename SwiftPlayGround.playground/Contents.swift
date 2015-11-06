@@ -52,6 +52,50 @@ let implicitString:String = assumeString //不需要感叹号
 
 //断言和错误处理还没有做到
 
+//字典,block的处理与判断
+
+var params = ["title":"zhangsan","agr":23]
+params.updateValue("hahah", forKey: "title")
+
+var parames = ["re":"re","hh":3]
+
+
+
+//延迟存储属性
+class MainTabBar: UITabBar {
+    lazy var name:String = {
+        return "hahaha"
+    }()
+}
+
+struct timeTable {
+    let multiplier: Int
+    subscript(index:Int) ->Int{
+        return multiplier * index
+    }
+}
+
+let threeTimesTable = timeTable(multiplier: 3)
+
+threeTimesTable[6]
+
+
+//防止重写，属性或者下标脚本标记为final来防止他们被重写，只需要在声明关键字前加上final
+//在 class 前加上final特性来将整个类标记为final，这样的类
+//是不可以被继承的，任何子类继承子类时，在编译时都会报错
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
