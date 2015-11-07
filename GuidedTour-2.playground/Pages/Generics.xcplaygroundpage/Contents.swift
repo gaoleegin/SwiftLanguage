@@ -11,6 +11,16 @@ func repeatItem<Item>(item: Item, numberOfTimes: Int) -> [Item] {
 }
 repeatItem("knock", numberOfTimes:4)
 
+///范型
+func repateItem1<Item>(item:Item,numbersOfItems:Int) ->[Item] {
+    var result = [Item]()
+    
+    for _ in 0..<numbersOfItems{
+        result.append(item)
+    }
+    return result
+}
+
 //: You can make generic forms of functions and methods, as well as classes, enumerations, and structures.
 //:
 // Reimplement the Swift standard library's optional type

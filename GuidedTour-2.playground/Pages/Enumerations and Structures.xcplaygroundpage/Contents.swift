@@ -24,6 +24,10 @@ enum Rank: Int {
 let ace = Rank.Ace
 let aceRawValue = ace.rawValue
 
+let two = Rank.Jack
+let twoValue = two.rawValue
+//索引值，就是的就是索引值
+
 //: > **Experiment**:
 //: > Write a function that compares two `Rank` values by comparing their raw values.
 //:
@@ -54,6 +58,28 @@ enum Suit {
 }
 let hearts = Suit.Hearts
 let heartsDescription = hearts.simpleDescription()
+
+
+//在枚举里面写方法
+enum Suit1 {
+    case Spads,Hearts,Diamonds,Clubs
+    
+    func simpleDescriotion()->String {
+        switch self {
+        case .Spads:
+                return "spads"
+        case .Hearts:
+                return "hearts"
+        case .Diamonds:
+                return "Diamods"
+        case .Clubs:
+                return "clubs"
+        }
+    }
+}
+
+let spas = Suit1.Spads
+let spadsDescription = spas.simpleDescriotion()
 
 //: > **Experiment**:
 //: > Add a `color()` method to `Suit` that returns “black” for spades and clubs, and returns “red” for hearts and diamonds.
@@ -93,6 +119,14 @@ switch success {
     case let .Error(error):
         print("Failure...  \(error)")
 }
+
+enum ServerResponse1 {
+    case Result(String,String)
+    case Error(String)
+}
+
+let success1 = ServerResponse1.Result("6:00 am", "8:09 pm")
+let failure1 = ServerResponse1.Error("Out of cheese")
 
 //: > **Experiment**:
 //: > Add a third case to `ServerResponse` and to the switch.
